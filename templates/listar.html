@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Estoque de Flores</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>🌼Estoque de Flores</h1>
+  
+  <table>
+    <tr>
+      <th>Flor</th>
+      <th>Quantidade</th>
+      <th>Preço (R$)</th>
+    </tr>
+    {% for flor in flores %}
+    <tr>
+      <td>{{ flor.nome }}</td>
+      <td>{{ flor.quantidade }}</td>
+      <td>{{ "%.2f"|format(flor.preco) }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div style="text-align:center;">
+    <a href="/"><button>Voltar</button></a>
+  </div>
+</body>
+</html>

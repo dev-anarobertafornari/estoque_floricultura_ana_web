@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Remover Flor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='remover.css') }}">
+</head>
+<body>
+<div class="card">
+
+    <h2>Remover flor</h2>
+
+    <p><strong>{{ flor.nome }}</strong></p>
+    <p>Quantidade em estoque: <strong>{{ flor.quantidade }}</strong></p>
+
+    {% if erro %}
+        <p class="erro">{{ erro }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Quantidade a remover:</label><br>
+        <input type="number" name="quantidade" min="1" max="{{ flor.quantidade }}" required>
+
+        <br><br>
+        <button class="btn-remover" type="submit">Remover</button>
+    </form>
+    <a href="{{ url_for('ver_estoque') }}" class="btn-voltar">Voltar ao estoque</a>
+</div>
+
+</body>
+</html>

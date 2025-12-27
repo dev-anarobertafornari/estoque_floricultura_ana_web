@@ -1,0 +1,83 @@
+body {
+    background-color: #ffeef7; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h2 {
+    color: #df749d;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #ce819e;
+}
+
+input[type="number"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 2px solid #ffb6d9;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 6px #ffb6d9;
+}
+
+.btn-remover {
+    background-color: #f6689c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-remover:hover {
+    background-color: #f35c95;
+}
+
+.btn-voltar {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+    color: #f965af;
+    font-size: 15px;
+}
+
+.erro {
+    color: rgb(252, 81, 81);
+    margin-bottom: 10px;
+    font-weight: bold;
+}

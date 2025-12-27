@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+
+<body>
+
+    <table class="tabela-admin">
+
+        <!-- Linha do botão -->
+        <tr class="linha-add">
+            <td colspan="4">
+                <a href="{{ url_for('adicionar') }}" class="add-btn-table"> Adicionar nova flor </a>
+            </td>
+        </tr>
+
+        <tr class="cabecalho">
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+        
+        {% for f in flores %}
+        <tr>
+            <td>{{ f.nome }}</td>
+            <td>{{ f.quantidade }}</td>
+            <td>R$ {{ "%.2f"|format(f.preco) }}</td>
+            <td>
+                <a href="{{ url_for('remover', nome=f.nome) }}" class="btn-excluir">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
